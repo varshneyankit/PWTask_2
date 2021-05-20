@@ -80,31 +80,22 @@ private SecondFragment secondFragment;
             intent.setData(Uri.parse(uri));
             startActivity(intent);
         });
-        email.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_SENDTO);
-                intent.setData(Uri.parse("mailto:ankitv397@gmail.com"));
-                startActivity(Intent.createChooser(intent, "Send Email"));
-            }
+        email.setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            intent.setData(Uri.parse("mailto:ankitv397@gmail.com"));
+            startActivity(Intent.createChooser(intent, "Send Email"));
         });
-        github.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String url = "https://github.com/varshneyankit/";
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                startActivity(intent);
-            }
+        github.setOnClickListener(view -> {
+            String url = "https://github.com/varshneyankit/";
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(url));
+            startActivity(intent);
         });
-        resume.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String url = "https://github.com/varshneyankit/";
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                startActivity(intent);
-            }
+        resume.setOnClickListener(view -> {
+            String url = "https://drive.google.com/file/d/1Bw39pvqG-ModIvUYLCqPyZZe-lMA6eVm/view?usp=sharing";
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(url));
+            startActivity(intent);
         });
         alertDialog.show();
     }
